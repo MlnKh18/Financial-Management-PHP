@@ -1,14 +1,13 @@
+# Mengaktifkan modul rewrite
 RewriteEngine On
 RewriteBase /financial_management/
 
-# Mengatur URL /login menjadi index.php, tanpa parameter 'action'
-RewriteRule ^login$ index.php [QSA,L]
+# Arahkan permintaan frontend ke file yang sesuai di views/
+RewriteRule ^home$ views/home.php [L]
+RewriteRule ^login$ views/Auth/loginScreen.php [L]
+RewriteRule ^register$ views/Auth/registerScreen.php [L]
 
-# Mengatur URL /register menjadi index.php, tanpa parameter 'action'
-RewriteRule ^register$ index.php [QSA,L]
-
-# Mengatur URL ke halaman home, jika dibutuhkan
-RewriteRule ^home$ index.php [QSA,L]
-
-# Menangani URL yang lebih bersih dan mengarahkan ke index.php
-RewriteRule ^([a-zA-Z0-9_-]+)$ index.php [QSA,L]
+# Untuk backend, pastikan permintaan menuju index.php untuk diproses lebih lanjut
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^backend/([a-zA-Z0-9_-]+)$ index.php?page=backend/$1 [QSA,L]

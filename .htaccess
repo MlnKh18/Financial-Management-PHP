@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /financial_management/
+
+# Mengatur URL /login menjadi index.php, tanpa parameter 'action'
+RewriteRule ^login$ index.php [QSA,L]
+
+# Mengatur URL /register menjadi index.php, tanpa parameter 'action'
+RewriteRule ^register$ index.php [QSA,L]
+
+# Mengatur URL ke halaman home, jika dibutuhkan
+RewriteRule ^home$ index.php [QSA,L]
+
+# Menangani URL yang lebih bersih dan mengarahkan ke index.php
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php [QSA,L]

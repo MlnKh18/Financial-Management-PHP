@@ -25,7 +25,7 @@ $(document).ready(function () {
                 console.log(response);
                 if (response.status === 'ok') {
                     alert('Login berhasil!');
-                    // window.location.href = 'dashboard.php'; // Sesuaikan dengan halaman setelah login
+                    window.location.href = './home'; // Sesuaikan dengan halaman setelah login
                 } else {
                     alert('Login gagal, email atau password salah!');
                 }

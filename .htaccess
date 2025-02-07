@@ -3,7 +3,7 @@ RewriteEngine On
 RewriteBase /financial_management/
 
 # Arahkan permintaan frontend ke file yang sesuai di views/
-RewriteRule ^home$ views/home.php [L]
+RewriteRule ^home$ views/Home/homeScreen.php [L]
 RewriteRule ^login$ views/Auth/loginScreen.php [L]
 RewriteRule ^register$ views/Auth/registerScreen.php [L]
 

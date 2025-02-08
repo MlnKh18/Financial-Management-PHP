@@ -1,14 +1,16 @@
 <?php
+
 $pageTitle = "Login";
 $pageStyle = "auth.css";
 $pageScript = "auth.js";
 require_once(__DIR__ . '../../includes/header-auth.php');
+
 ?>
 
 <div class="c-auth">
     <h2>Login</h2>
     <div class="c-form-auth">
-        <form id="loginForm">
+        <form id="loginForm" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br><br>
 
@@ -30,5 +32,6 @@ require_once(__DIR__ . '../../includes/header-auth.php');
     <script src="./assets/js/<?php echo $pageScript; ?>"></script>
 <?php endif; ?>
 
+    </body>
 
-<?php require_once(__DIR__ . '../../includes/footer.php'); ?>
+    </html>

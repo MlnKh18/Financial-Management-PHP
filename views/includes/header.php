@@ -1,3 +1,8 @@
+<?php
+require_once(__DIR__ . '../../includes/session.php');
+checkAuth();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,14 +21,15 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 
 <body>
     <div class="c-content">
         <aside>
-            <h2>Menu</h2>
+            <h1>Halo, <?php echo $_SESSION['username_pegawai']; ?></h1>
             <ul>
-                <li><a href="./">Home</a></li>
+                <li><a href="./home">Home</a></li>
                 <li><a href="./login">Login</a></li>
                 <li><a href="./register">Register</a></li>
             </ul>

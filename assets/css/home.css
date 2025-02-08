@@ -1,0 +1,69 @@
+body .c-home-dashboard {
+  min-height: 100vh;
+  padding: 20px;
+  background: #f6f6f6;
+  color: black;
+}
+body .c-home-dashboard .bx-saldo {
+  display: flex;
+  flex-direction: flex;
+  border-radius: 10px;
+  padding-inline: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  color: #20654a;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin-bottom: 20px;
+}
+body .c-home-dashboard .bx-saldo #saldo {
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: #20654a;
+  color: #ffffff;
+}
+.c-home-dashboard .c-content-home-dashboard {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.c-home-dashboard .c-content-home-dashboard .section-container {
+  display: flex;
+  margin: 20px 0;
+  padding: 30px;
+  border-radius: 20px;
+}
+.c-home-dashboard .c-content-home-dashboard .section-container .section {
+  cursor: pointer;
+  margin-right: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: #ffffff;
+  color: #20654a;
+  transition: all 0.2s ease-in-out;
+}
+.c-home-dashboard .c-content-home-dashboard .section-container .section:first-child{
+  background: #20654a;
+  color: #ffffff;
+}
+.c-home-dashboard .c-content-home-dashboard .section-container .section:last-child:hover{
+  background: #20654a;
+  color: #ffffff;
+}
+.c-home-dashboard .section-chart {
+  padding: 20px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: #ffffff;
+}

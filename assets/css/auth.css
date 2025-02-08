@@ -1,6 +1,18 @@
+:root {
+  --shadow-color: rgba(170, 170, 170, 0.75);
+  --border-color: #ccc;
+  --input-bg: #f6fffd;
+  --input-focus-bg: #dcfff7;
+  --button-bg: #20654a;
+  --button-hover-bg: #164734;
+  --button-text-color: #ffffff;
+  --link-color: #20654a;
+}
+
 .c-content main {
   width: 100%;
 }
+
 .c-auth {
   height: 100vh;
   display: flex;
@@ -8,55 +20,61 @@
   align-items: center;
   justify-content: center;
 }
+
 #loginForm {
   display: flex;
   flex-direction: column;
 }
+
 .c-form-auth {
   margin-top: 20px;
   width: 25rem;
   border-radius: 5%;
   height: auto;
   padding: 2rem;
-  box-shadow: 5px 7px 15px 0px rgba(170, 170, 170, 0.75);
-  -webkit-box-shadow: 5px 7px 15px 0px rgba(170, 170, 170, 0.75);
-  -moz-box-shadow: 5px 7px 15px 0px rgba(170, 170, 170, 0.75);
+  box-shadow: 5px 7px 15px 0px var(--shadow-color);
+  -webkit-box-shadow: 5px 7px 15px 0px var(--shadow-color);
+  -moz-box-shadow: 5px 7px 15px 0px var(--shadow-color);
 }
+
 .c-form-auth input {
   margin-top: 10px;
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
-  background: #f6fffd;
+  background: var(--input-bg);
 }
+
 .c-form-auth input:focus {
   transition: all 0.3s ease-in-out;
-
-  background: #dcfff7;
+  background: var(--input-focus-bg);
   outline: none;
 }
+
 .c-form-auth button {
   width: 100%;
   padding: 10px;
   margin-top: 8rem;
   border-radius: 5px;
-  color: #ffffff;
+  color: var(--button-text-color);
   font-size: 1rem;
   font-weight: bold;
   border: none;
-  background: #20654a;
+  background: var(--button-bg);
   transition: all 0.2s ease-in-out;
 }
+
 .c-form-auth button:hover {
-  background: #164734;
+  background: var(--button-hover-bg);
   cursor: pointer;
 }
+
 .link {
   font-size: small;
   cursor: pointer;
   margin-top: 1rem;
   text-align: center;
-  color: #20654a;
+  color: var(--link-color);
 }

@@ -42,4 +42,23 @@ class PegawaiModel
         $stmt->execute();
         return $stmt->get_result();
     }
+    public function getSaldo(){
+        $sql = "SELECT * FROM saldo where id_saldo = 1";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+    public function updateSaldo($jumlah_saldo){
+        $sql = "UPDATE saldo SET jumlah_saldo = ? WHERE id_saldo = 1";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $jumlah_saldo);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+    public function getAllLogsSaldo(){
+        $sql = "SELECT * FROM log_saldo ORDER BY created_at DESC";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->get_result();
+    }   
 }

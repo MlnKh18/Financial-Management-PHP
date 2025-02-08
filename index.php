@@ -1,5 +1,7 @@
 <?php
 require_once(__DIR__ . '../../financial_management/backend/controllers/auth/authController.php');
+require_once(__DIR__ . '../../financial_management/backend/controllers/pegawai/homeController.php');
+
 require_once(__DIR__ . '../../financial_management/configurations/connection.php');
 
 // Pastikan hanya menerima method POST untuk login dan registrasi
@@ -70,9 +72,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $authController = new AuthController();
         echo $authController->handleRegister($username, $email, $password);
     }
+} elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $page = isset($_GET['page']) ? trim($_GET['page']) : '';
 
+    // Pastikan hanya menangani request yang benar
+    if ($page === 'backend/home-GetSaldo') {
+        $homeController = new HomeController();
+        $response = $homeController->handleGetSaldo();
+
+        echo json_encode($response);
+        exit;
+    } elseif ($page === 'backend/home-GetAllLogsSaldo') {
+        $homeController = new HomeController();
+        $response = $homeController->handleGetAllLogsSaldo();
+
+
+        echo json_encode($response);
+        exit;
+    }
 } else {
-    // Method selain POST tidak diperbolehkan
     echo json_encode([
         'status' => 'error',
         'code' => 405,

@@ -35,5 +35,6 @@ require_once(__DIR__ . '../../includes/header-auth.php');
     <script src="./assets/js/<?php echo $pageScript; ?>"></script>
 <?php endif; ?>
 
+    </body>
 
-<?php require_once(__DIR__ . '../../includes/footer.php'); ?>
+    </html>

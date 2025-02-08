@@ -29,6 +29,12 @@ class AuthService
                 'message' => 'Email atau password salah'
             ];
         }
+        
+        session_start();
+        $_SESSION['id_pegawai'] = $user['id_pegawai'];
+        $_SESSION['username_pegawai'] = $user['username_pegawai'];
+        $_SESSION['email_pegawai'] = $user['email_pegawai'];
+        $_SESSION['role_id'] = $user['role_id'];
 
         return [
             'status' => 'ok',

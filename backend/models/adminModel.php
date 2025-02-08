@@ -22,6 +22,19 @@ class AdminModel
             return ['error' => $e->getMessage()];
         }
     }
+    public function checkRoleIdUsers($id){
+        try {
+            $sql = "SELECT id_role FROM pegawai WHERE id_pegawai = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_assoc();
+        } catch (Exception $e) {
+            // Menangani error dan mengembalikan pesan kesalahan
+            return ['error' => $e->getMessage()];
+        }
+    }
 
     // Ambil semua data transaksi
     public function getAllDataTransaction()

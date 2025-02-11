@@ -11,7 +11,8 @@ $(document).ready(function () {
   fetchLogsSaldo();
 
   $("#filter-select").change(function () {
-    fetchLogsSaldo($(this).val());
+    console.info(this.value);
+    fetchLogsSaldo($(this).value);
   });
 
   document.querySelectorAll(".section").forEach((section) => {
@@ -97,9 +98,26 @@ function renderChart(logs) {
 
   Highcharts.chart("section-chart", {
     chart: { type: "column" },
+
     title: { text: "Grafik Perubahan Saldo" },
     xAxis: { categories: categories, title: { text: "Tanggal" } },
-    yAxis: { min: 0, title: { text: "Jumlah Saldo (IDR)" } },
+    yAxis: {
+      min: 0,
+      title: { text: "Jumlah Saldo (IDR)" },
+      stackLabels: { enabled: true },
+      tooltip: { valueSuffix: " IDR" },
+    },
+    legend: {
+      align: "right",
+      x: -30,
+      verticalAlign: "top",
+      y: 25,
+      floating: true,
+      backgroundColor: Highcharts.defaultOptions.chart.backgroundColor,
+      borderColor: "#CCC",
+      borderWidth: 1,
+      shadow: false,
+    },
     tooltip: { valueSuffix: " IDR", shared: true },
     series: [
       { name: "Perubahan Saldo", data: perubahanSaldo },

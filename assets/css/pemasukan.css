@@ -1,0 +1,174 @@
+:root {
+  --primary-color: #20654a;
+  --secondary-color: #ffffff;
+  --background-color: #f6f6f6;
+  --text-color: black;
+  --shadow-effect: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+body .c-pemasukan {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+body .c-pemasukan .bx-saldo {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  padding-inline: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: var(--shadow-effect);
+  margin-bottom: 20px;
+}
+
+body .c-pemasukan .bx-saldo #saldo {
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.c-pemasukan .c-content-pemasukan {
+  background: var(--secondary-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-effect);
+}
+
+.c-pemasukan .c-content-pemasukan #pemasukanTable {
+  border-collapse: collapse;
+  flex: 2;
+  text-align: left;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-effect);
+}
+
+.c-pemasukan .c-content-pemasukan #pemasukanTable th,
+.c-pemasukan .c-content-pemasukan #pemasukanTable td {
+  padding: 10px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.c-pemasukan .c-content-pemasukan #pemasukanTable thead {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.c-pemasukan .c-content-pemasukan #pemasukanTable thead th {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.c-pemasukan .c-content-pemasukan #pemasukanTable tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.c-pemasukan .c-content-pemasukan #pemasukanTable tbody tr:hover {
+  background-color: #ddd;
+}
+
+.c-pemasukan .c-content-pemasukan #pemasukanTable thead #filter-bulanan,
+.c-pemasukan .c-content-pemasukan #pemasukanTable thead #filter-tahunan {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  transition: all 0.2s ease-in-out;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.c-pemasukan .c-content-pemasukan #pemasukanTable thead #filter-bulanan:hover,
+.c-pemasukan .c-content-pemasukan #pemasukanTable thead #filter-tahunan:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.section-pemasukan {
+  gap: 10px;
+  display: flex;
+  margin-top: 20px;
+}
+.section-pemasukan #form-pemasukan {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.c-content-pemasukan .section-pemasukan #form-pemasukan label {
+  margin: 5px 0;
+  font-weight: bold;
+}
+.c-content-pemasukan .section-pemasukan #form-pemasukan input[type="text"],
+.c-content-pemasukan .section-pemasukan #form-pemasukan input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.c-content-pemasukan .section-pemasukan #form-pemasukan button[type="submit"] {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+  box-shadow: var(--shadow-effect);
+
+  font-weight: bold;
+}
+.c-content-pemasukan
+  .section-pemasukan
+  #form-pemasukan
+  button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.amount-of-list-table {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px;
+}
+.amount-of-list-table .button-of-amount {
+  display: flex;
+  gap: 20px;
+}
+.amount-of-list-table button {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
+  box-shadow: var(--shadow-effect);
+  font-weight: bold;
+  padding: 5px 20px;
+}
+.amount-of-list-table button svg {
+  fill: #20654a;
+}
+.amount-of-list-table button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.amount-of-list-table button svg:hover {
+  fill: var(--secondary-color);
+}

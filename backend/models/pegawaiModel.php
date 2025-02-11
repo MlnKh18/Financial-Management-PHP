@@ -42,23 +42,28 @@ class PegawaiModel
         $stmt->execute();
         return $stmt->get_result();
     }
-    public function getSaldo(){
+    public function getSaldo()
+    {
         $sql = "SELECT * FROM saldo where id_saldo = 1";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->get_result();
     }
-    public function updateSaldo($jumlah_saldo){
-        $sql = "UPDATE saldo SET jumlah_saldo = ? WHERE id_saldo = 1";
+    public function addTransactionPemasukan($id_pegawai, $total_transaksi, $deskripsi)
+    {
+        $sql = "INSERT INTO transaksi (id_pegawai, jenis_transaksi, tanggal_transaksi, total_transaksi, deskripsi) VALUES (?, 'pemasukan', NOW(), ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("i", $jumlah_saldo);
+        $stmt->bind_param("iss", $id_pegawai, $total_transaksi, $deskripsi);
+        $stmt->execute();
+        return $stmt->insert_id;
+    }
+    public function getAllLogsSaldo($halaman = 1, $limit = 10)
+    {
+        $offset = ($halaman - 1) * $limit;
+        $sql = "SELECT * FROM log_saldo ORDER BY created_at ASC LIMIT ? OFFSET ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ii", $limit, $offset);
         $stmt->execute();
         return $stmt->get_result();
     }
-    public function getAllLogsSaldo(){
-        $sql = "SELECT * FROM log_saldo ORDER BY created_at DESC";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
-        return $stmt->get_result();
-    }   
 }

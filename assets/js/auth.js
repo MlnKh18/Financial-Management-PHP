@@ -26,7 +26,8 @@ $(document).ready(function () {
         console.log(response);
         if (response.status === "ok") {
           alert("Login berhasil!");
-          window.location.href = "./home"; // Sesuaikan dengan halaman setelah login
+          localStorage.setItem("user", JSON.stringify(response.user));
+          window.location.href = "./home"
         } else {
           alert("Login gagal, email atau password salah!");
         }
